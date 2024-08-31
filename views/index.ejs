@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="navbar" class="border-solid border-black border-y-2 flex items-center justify-between px-12 py-4 mt-4">
+        <div class="text-3xl font-bold flex items-center justify-center"><img class="w-14 h-14 mx-2" src="../images/logo.png" alt="">QuickNotes</div>
+        <a class="text-xl font-semibold" href="/">Home</a>
+    </div>
+    
+    <a href="/create" id="newbox" class="border-solid border-black border-2 p-5 mx-16 my-10 bg-white text-xl font-bold inline-block">Create a new Note</a>
+
+    <div id="main">    
+        <div class="flex flex-row flex-wrap items-start justify-center">
+        <% files.forEach((x)=>{ %>
+        <div id="box" class="border-solid border-black border-2 flex flex-col shadow-xl justify-around m-10 w-72 h-72">
+            <div class="border-solid border-black border-2 text-xl font-bold bg-sky-200 mx-4 flex h-44 items-center justify-center">
+                <h3><%= x%></h3>
+            </div>
+            <div class="flex justify-around">
+                <a id="part1" class="border-solid border-black border-2 bg-sky-200 w-14 h-14 flex items-center justify-center" href="/view/<%= x%>"><img class="img1" src="../images/arrow-right.png" alt=""></a>
+                <a id="part2" class="border-solid border-black border-2 bg-sky-200 w-14 h-14 flex items-center justify-center" href="/edit/<%= x%>"><img class="img2" src="../images/edit.png" alt=""></a>
+                <a id="part3" class="border-solid border-black border-2 bg-sky-200 w-14 h-14 flex items-center justify-center" href="/delete/<%= x%>"><img class="img3" src="../images/trash.png" alt=""></a>
+            </div>
+        </div>
+        <% });%>
+    </div>
+    </div>
+</body>
+</html>
