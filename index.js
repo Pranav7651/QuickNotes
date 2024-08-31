@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path'); 
 const fs = require('fs');
+const port = 10000 ;
 
 const today = new Date();
 const year = today.getFullYear();
@@ -62,6 +63,6 @@ app.get("/delete/:filename",(req,res)=>{
 });
 
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log("Server is Running");
 });
